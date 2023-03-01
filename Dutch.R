@@ -33,4 +33,4 @@ for (participle in unique_participles) {
 df <- data.frame(participle = unique_participles,
                  adjectiveness = adjectiveness_vector)
 
-write.csv(df, "adjectiveness.csv")
+write.csv(df, "adjectiveness.csv", row.names=FALSE)
