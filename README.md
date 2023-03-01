@@ -18,7 +18,9 @@ Past participles in Dutch (and probably also in other languages) can often be us
 
 In theory, it is really easy to compute adjeciveness for a specific participle:
 
-$$\frac{\text{\#uses as an adjective}}{\text{\#uses as an adjective + \#uses as a participle}}$$
+```math
+\frac{\text{uses as an adjective}}{\text{uses as an adjective + uses as a participle}}
+```
 
 However, how does one assess how many times a specific participle is used in language *as a whole*? To approximate this metric, I queried [LassyGroot](https://taalmaterialen.ivdnt.org/download/tstc-lassy-groot-corpus/) for *all* adjectives and *all* participles in the entire corpus. Then, I looked up for every undeclensed past participle form (e.g. no *verdwaald**e***) how often it appeared as a particple, and also how often it appeared as an adjective. With this information, I could compute adjectiveness for every participle.
 
