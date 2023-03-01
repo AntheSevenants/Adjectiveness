@@ -22,7 +22,7 @@ In theory, it is really easy to compute adjeciveness for a specific participle:
 \frac{\text{uses as an adjective}}{\text{uses as an adjective + uses as a participle}}
 ```
 
-However, how does one assess how many times a specific participle is used in language *as a whole*? To approximate this metric, I queried [LassyGroot](https://taalmaterialen.ivdnt.org/download/tstc-lassy-groot-corpus/) for *all* adjectives and *all* participles in the entire corpus. Then, I looked up for every undeclensed past participle form (e.g. no *verdwaald**e***) how often it appeared as a particple, and also how often it appeared as an adjective. With this information, I could compute adjectiveness for every participle.
+However, how does one assess how many times a specific participle is used in language *as a whole*? To approximate this metric, I queried [LassyGroot](https://taalmaterialen.ivdnt.org/download/tstc-lassy-groot-corpus/) for *all* adjectives and *all* participles in the entire corpus. Then, I looked up for every undeclensed past participle form (e.g. no *verdwaald**e***) how often it appeared as a participle, and also how often it appeared as an adjective. With this information, I could compute adjectiveness for every participle.
 
 ## I do not want to run all these queries myself. Can I just download the output?
 
@@ -35,4 +35,4 @@ I queried all adjectives and participles using [mattenklopper](https://github.co
 * The output files were absolutely huge and totalled over 3 GB together.
 * The output files include the sentence contexts of each attestation. Since adjectives and participles are so common, my output files come dangerously close to just re-sharing the LassyGroot corpus 'as-is', which I think violates the corpus licence.
 
-I wrote a [cleaning script](https://github.com/AntheSevenants/Adjectiveness/blob/main/Clean.R) to scrub the sentence contexts and clean up the tokenisation. The output files of *this* script are still rather large (~ 800 MB), but could be shared on, for example, Zenodo. I will upload the files as soon as possible so my output becomes reproducible.
+I wrote a [cleaning script](https://github.com/AntheSevenants/Adjectiveness/blob/main/Clean.R) to scrub the sentence contexts and clean up the tokenisation. The output files of this script are available [here](https://doi.org/10.5281/zenodo.7687548).
