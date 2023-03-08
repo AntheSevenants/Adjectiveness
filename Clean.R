@@ -45,6 +45,7 @@ adjectives$adjective <- fix_tokenisation(adjectives$adjective)
 adjectives$adjective <- tolower(adjectives$adjective)
 
 participles_frequency <- as.data.frame(xtabs(~ participle, participles))
+adjectives_frequency <- as.data.frame(xtabs(~ adjective, adjectives))
 
-write.csv(participles, "participles.csv")
-write.csv(adjectives, "adjectives.csv")
+write.csv(participles_frequency, "participles.csv")
+write.csv(adjectives_frequency, "adjectives.csv")
