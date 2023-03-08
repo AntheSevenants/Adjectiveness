@@ -3,6 +3,10 @@
 # 
 # I use this script to remove the superfluous information from my datasets
 
+fix_tokenisation = function(vector_) {
+  gsub("[-.«»]", "", vector_)
+}
+
 # Load the participles dataset
 participles <- read.csv("ParticiplesAnthe.csv")
 pre_nrow <- nrow(participles)
@@ -18,11 +22,7 @@ participles <- subset(participles,
                       select = c(participle, participle_lemma))
 
 # Fix tokenisation errors
-participles$participle <- gsub("", "", participles$participle)
-participles$participle <- gsub("-", "", participles$participle)
-participles$participle <- gsub("\\.", "", participles$participle)
-participles$participle <- gsub("«", "", participles$participle)
-participles$participle <- gsub("»", "", participles$participle)
+participles$participle <- fix_tokenisation(participles$participle)
 participles$participle <- tolower(participles$participle)
 
 # Load the adjectives dataset
@@ -41,12 +41,10 @@ adjectives <- subset(adjectives,
 names(adjectives) <- c("adjective", "adjective_lemma")
 
 # Fix tokenisation errors
-adjectives$adjective <- gsub("", "", adjectives$adjective)
-adjectives$adjective <- gsub("-", "", adjectives$adjective)
-adjectives$adjective <- gsub("«", "", adjectives$adjective)
-adjectives$adjective <- gsub("\\.", "", adjectives$adjective)
-adjectives$adjective <- gsub("»", "", adjectives$adjective)
+adjectives$adjective <- fix_tokenisation(adjectives$adjective)
 adjectives$adjective <- tolower(adjectives$adjective)
+
+participles_frequency <- as.data.frame(xtabs(~ participle, participles))
 
 write.csv(participles, "participles.csv")
 write.csv(adjectives, "adjectives.csv")
