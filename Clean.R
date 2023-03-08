@@ -47,5 +47,5 @@ adjectives$adjective <- tolower(adjectives$adjective)
 participles_frequency <- as.data.frame(xtabs(~ participle, participles))
 adjectives_frequency <- as.data.frame(xtabs(~ adjective, adjectives))
 
-write.csv(participles_frequency, "participles.csv")
-write.csv(adjectives_frequency, "adjectives.csv")
+write.csv(participles_frequency, "participles.csv", row.names=F)
+write.csv(adjectives_frequency, "adjectives.csv", row.names=F)
