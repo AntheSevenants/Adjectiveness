@@ -5,6 +5,14 @@
 
 # Load the participles dataset
 participles <- read.csv("ParticiplesAnthe.csv")
+pre_nrow <- nrow(participles)
+# Remove duplicates
+participles <- participles[!duplicated(participles[ , c("sentence",
+                                                         "participle")]),]
+after_nrow <- nrow(participles)
+
+print(paste("Removed", pre_nrow - after_nrow, "duplicates"))
+
 # Bye junk
 participles <- subset(participles,
                       select = c(participle, participle_lemma))
@@ -19,6 +27,13 @@ participles$participle <- tolower(participles$participle)
 
 # Load the adjectives dataset
 adjectives <- read.csv("AdjectivesAnthe.csv")
+pre_nrow <- nrow(adjectives)
+# Remove duplicates
+adjectives <- adjectives[!duplicated(adjectives[ , c("sentence",
+                                                     "participle")]),]
+after_nrow <- nrow(adjectives)
+
+print(paste("Removed", pre_nrow - after_nrow, "duplicates"))
 # Bye junk
 adjectives <- subset(adjectives,
                      select = c(participle, participle_lemma))
