@@ -1,8 +1,10 @@
 participle_counts <- read.csv("participles.csv")
 unique_participles <- unique(participle_counts$participle)
+participle_counts <- xtabs(frequency ~ participle, participle_counts)
 
 adjective_counts <- read.csv("adjectives.csv")
 unique_adjectives <- unique(adjective_counts$adjective)
+adjective_counts <- xtabs(frequency ~ adjective, adjective_counts)
 
 # TODO: should I only count bare forms, or also declensed forms?
 
