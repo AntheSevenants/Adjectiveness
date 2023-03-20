@@ -1,11 +1,8 @@
-participles <- read.csv("participles.csv")
-adjectives <- read.csv("adjectives.csv")
+participle_counts <- read.csv("participles.csv")
+unique_participles <- unique(participle_counts$participle)
 
-unique_participles <- unique(participles$participle)
-participle_counts <- table(participles[["participle"]])
-
-unique_adjectives <- unique(adjectives$adjective)
-adjective_counts <- table(adjectives[["adjective"]])
+adjective_counts <- read.csv("adjectives.csv")
+unique_adjectives <- unique(adjective_counts$adjective)
 
 # TODO: should I only count bare forms, or also declensed forms?
 
